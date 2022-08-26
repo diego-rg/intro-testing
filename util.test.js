@@ -25,7 +25,7 @@ test("debe devolver un texto válido", () => {
 });
 
 //end to end. poñemos máximo de 10s xa que por defecto jest da 5 e este test será mais largo e dará erro
-test("facer click", async () => {
+test("debe crear un elemento ca clase .user-item co texto válido", async () => {
   const browser = await puppeteer.launch({
     headless: false,
     slowMo: 80,
