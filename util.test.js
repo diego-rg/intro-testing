@@ -1,6 +1,6 @@
 //unit tests para as diferentes funcións de util.js. Sintaxis antigua
 //para iniciar configurar o script de test para jest
-const { generateText } = require("./util");
+const { generateText, checkAndGenerate } = require("./util");
 
 //usar valores límite, problemáticos, etc
 //double check (valores límite?), contrario,..
@@ -14,4 +14,10 @@ test("debe devolver un nome e idade", () => {
 test("debe devolver o texto sin datos", () => {
   const text = generateText("", null);
   expect(text).toBe(" (null years old)");
+});
+
+//integration test que abarca validateInput e generateText
+test("should generate a valid text output", () => {
+  const text = checkAndGenerate("Pepe", 50);
+  expect(text).toBe("Pepe (50 years old)");
 });
